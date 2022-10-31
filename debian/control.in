@@ -1,0 +1,44 @@
+Source: bst-external
+Section: gnome
+Priority: optional
+Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
+Uploaders: @GNOME_TEAM@
+Build-Depends: debhelper-compat (= 12),
+               dh-sequence-gnome,
+               dh-sequence-python3,
+               python3,
+               python3-buildstream <!nocheck>,
+               python3-ruamel.yaml <!nocheck>,
+               python3-pytest <!nocheck>,
+               python3-pytest-cov <!nocheck>,
+               python3-pytest-runner,
+               python3-setuptools,
+               python3-setuptools-scm
+Standards-Version: 4.3.0
+Rules-Requires-Root: no
+Vcs-Browser: https://salsa.debian.org/gnome-team/bst-external
+Vcs-Git: https://salsa.debian.org/gnome-team/bst-external.git
+Homepage: https://gitlab.com/BuildStream/bst-external
+
+Package: python3-bst-external
+Section: python
+Architecture: all
+Depends: ${misc:Depends},
+         ${python3:Depends},
+         python3-buildstream
+Enhances: buildstream
+Description: external plugins for BuildStream toolset
+ BuildStream is a GNOME project to improve the continuous integration
+ of complex systems and applications. The project aims to pay special
+ attention to those developers and integrators who care about the
+ maintainability of their projects during a long period of time.
+ .
+ BuildStream is also a powerful and flexible software integration toolset.
+ It has been designed to create different outputs out of a unique input
+ and, at the same time, it is able to adapt to complex workflows, even
+ when additional build tools are required. An important part of
+ BuildStream is a sister project called BuildGrid, that allows
+ BuildStream to build at scale.
+ .
+ This package provides a collection of BuildStream plugins that don't
+ currently fit in with the core plugins.
